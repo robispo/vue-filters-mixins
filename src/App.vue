@@ -11,16 +11,22 @@
         </ul>
       </div>
     </div>
+    <hr />
+    <app-list></app-list>
   </div>
 </template>
 
 <script>
+import List from './List.vue';
+import { fruitMixin } from './fruitMixin.js';
+
 export default {
+  components: {
+    appList: List
+  },
   data() {
     return {
-      text: 'Hello there!!!',
-      filterText: '',
-      fruits: ['Hola', 'Soy', 'Goku', 'Gohan']
+      text: 'Hello there!!!'
     };
   },
   filters: {
@@ -28,11 +34,7 @@ export default {
       return v.toUpperCase();
     }
   },
-  computed: {
-    filteredFruits() {
-      return this.fruits.filter(f => f.toLowerCase().match(this.filterText.toLowerCase()));
-    }
-  }
+  mixins: [fruitMixin]
 };
 </script>
 
