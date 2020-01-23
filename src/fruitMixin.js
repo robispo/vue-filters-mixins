@@ -11,5 +11,8 @@ export const fruitMixin = {
         f.toLowerCase().match(this.filterText.toLowerCase())
       );
     }
+  },
+  created() {
+    console.log('1');
   }
 };

@@ -34,7 +34,10 @@ export default {
       return v.toUpperCase();
     }
   },
-  mixins: [fruitMixin]
+  mixins: [fruitMixin],
+  created() {
+    console.log(2);
+  }
 };
 </script>
 
