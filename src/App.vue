@@ -7,7 +7,7 @@
         <hr />
         <input v-model="filterText" placeholder="Filter" />
         <ul>
-          <li v-for="f in filteredFruits">{{ f }}</li>
+          <li v-for="(f, i) in filteredFruits" v-bind:key="i">{{ f }}</li>
         </ul>
       </div>
     </div>
